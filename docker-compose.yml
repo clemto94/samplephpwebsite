@@ -1,0 +1,25 @@
+version: "3.2"
+services:
+# container d'application php
+  php:
+    build: './php/'
+    networks:
+      - back
+    volumes:
+      - ./app_php/:/var/www/html/
+# container de server apache qui servira les page php sur le port 3000
+  my-apache:
+    build: './apache/'
+    depends_on:
+      - php
+    networks:
+      - front
+      - back
+    ports:
+      - "3000:80"
+    volumes:
+      - ./app_php/:/var/www/html/
+# réseaux entre les container docker
+networks:
+  front:
+  back:
