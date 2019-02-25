@@ -1,0 +1,7 @@
+FROM httpd:2.4.33-alpine
+RUN apk update; \
+    apk upgrade;
+# Copie du fichier de configuration avec le proxy
+COPY apache-config.conf /usr/local/apache2/conf/demo.apache.conf
+RUN echo "Include /usr/local/apache2/conf/demo.apache.conf" \
+    >> /usr/local/apache2/conf/httpd.conf

@@ -1,0 +1,18 @@
+{
+    "name": "clement/samplephpwebsite",
+    "require-dev": {
+        "phpunit/phpunit": "^5.2"
+    },
+    "authors": [
+        {
+            "name": "clément",
+            "email": "clem.larmi@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "MathDockerIntero\\": "app_php/"
+        }
+    },
+    "require": {}
+}
